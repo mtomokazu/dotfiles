@@ -1,0 +1,48 @@
+###
+###  screen 
+###
+###  $Id$
+###
+
+defscrollback 2048
+
+##
+## status
+##
+hardstatus alwayslastline
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+%Lw%?%?%=%{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+hardstatus string '%{= wg}[ %{B}%H %{g}][%{b m}%Y-%m-%d %{b m}%c %{g}]'
+
+#screen -t shell1 0
+#screen -t shell2 1
+
+startup_message off
+
+defencoding utf8
+cjkwidth on
+
+##
+## bind
+##
+
+escape ^z^z
+
+#vbell off
+vbell on
+#vbell_msg "beep"
+
+msgwait 8
+
+autodetach off
+
+#caption always ”%{= wk} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wb}%y/%m/%d(%D) %{=b wb}%c”�
+
+##
+## bind
+##
+bind ^U encoding utf8
+bind ^E encoding euc
+bind ^S encoding sjis
+
+## eof
