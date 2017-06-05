@@ -1,0 +1,30 @@
+[user]
+	name = Matsushima Tomokazu
+#	email = tomokazu.matsushima@gmail.com
+	email = mtomokazu@gmail.com
+[color]
+	ui = auto
+[core]
+	editor = emacs -nw
+	pager = less
+[core]
+        excludesfile = ~/.gitignore
+#       pager = lv -c
+#       pager = less -r -I'
+        pager = less --quit-if-one-screen -R -r -I
+[alias]
+        st = status
+        co = checkout
+        br = branch
+        di = diff
+        #diff = diff -b
+        hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+        # ex) * 5baccf0 Modified 'generate' target. (Matsushima Tomokazu)  (origin/master, origin/HEAD)
+        #tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
+        tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cred%d%Creset'
+[diff]
+        tool = vimdiff
+[pull]
+        rebase = true
+[push]
+	default = simple
