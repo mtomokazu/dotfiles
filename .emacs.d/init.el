@@ -174,4 +174,14 @@
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\.yml$'" . yaml-mode))
 
+;;
+;; recentf-ext
+;;
+(setq recentf-max-saved-items 100) ; 100個まで履歴として保存
+(setq recentf-auto-cleanup 'never)  ;; 存在しないファイルは消さない
+(setq recentf-exclude '("/recentf" "COMMIT_EDITMSG" "/.?TAGS" "^/sudo:" "/\\.emacs\\.d/\\.cask/"))
+(setq recentf-auto-save-timer (run-with-idle-timer 120 t 'recentf-save-list))
+(recentf-mode 1)
+(global-set-key (kbd "C-c t") 'recentf-open-files)
+
 ;; eof
