@@ -10,6 +10,17 @@
 (set-default-coding-systems 'utf-8)
 (setq file-name-coding-system 'utf-8)
 
+(load-library "term/bobcat")
+(when (fboundp 'terminal-init-bobcat)
+  (terminal-init-bobcat))
+
+(setq inhibit-startup-message t)
+(line-number-mode t)
+(column-number-mode t)
+
+(global-set-key "\C-xy" 'goto-line)
+(global-set-key "\C-xw" 'what-line)
+
 ;;; uncomment this line to disable loading of "default.el" at startup
 ;; (setq inhibit-default-init t)
 
@@ -111,6 +122,14 @@
 (use-package scala-mode
 	     :interpreter
 	     ("scala" . scala-mode))
+
+;;;
+;;;  auto-complete
+;;;
+(add-to-list 'load-path "~/lib/emacs/auto-complete")
+(require 'auto-complete)
+(require 'auto-complete-config)    ; 必須ではないですが一応
+(global-auto-complete-mode t)
 
 ;;
 ;; Groovy (ENSIME)
