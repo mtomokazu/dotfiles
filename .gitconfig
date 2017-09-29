@@ -22,6 +22,7 @@
         # ex) * 5baccf0 Modified 'generate' target. (Matsushima Tomokazu)  (origin/master, origin/HEAD)
         #tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
         tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cred%d%Creset'
+        glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s'
 [diff]
         tool = vimdiff
 [pull]
